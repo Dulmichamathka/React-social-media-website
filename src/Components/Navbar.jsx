@@ -53,9 +53,18 @@ const Navbar = () => {
   return (
     <AppBar position="sticky">
       <StyledToobar>
-        <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
-          Snapzio.
+        <Typography
+          variant="h6"
+          sx={{
+            display: { xs: "none", sm: "flex" },
+            alignItems: "center",
+            gap: "5px",
+          }}
+        >
+          Snapzio
+          <VideoCameraBackIcon sx={{ fontSize: 28 }} />
         </Typography>
+
         <VideoCameraBackIcon sx={{ display: { xs: "block", sm: "none" } }} />
         <Search>
           <InputBase placeholder="search..." />
