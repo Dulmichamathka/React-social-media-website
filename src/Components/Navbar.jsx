@@ -2,8 +2,9 @@ import {
   AppBar,
   Avatar,
   Badge,
-  Icon,
   InputBase,
+  Menu,
+  MenuItem,
   styled,
   Toolbar,
   Typography,
@@ -12,7 +13,7 @@ import {
 import VideoCameraBackIcon from "@mui/icons-material/VideoCameraBack";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import React from "react";
+import React, { useState } from "react";
 
 const StyledToobar = styled(Toolbar)({
   display: "flex",
@@ -47,6 +48,8 @@ const UserBox = styled("Box")(({ theme }) => ({
 }));
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <AppBar position="sticky">
       <StyledToobar>
@@ -64,14 +67,37 @@ const Navbar = () => {
           <Badge badgeContent={23} color="error">
             <NotificationsIcon />
           </Badge>
-          <Avatar sx={{ width: 30, height: 30 }} src="profile.jpg" />
+          <Avatar
+            sx={{ width: 30, height: 30 }}
+            src="profile.jpg"
+            onClick={(e) => setOpen(true)}
+          />
         </Icons>
 
-        <UserBox>
+        <UserBox onClick={(e) => setOpen(true)}>
           <Avatar sx={{ width: 30, height: 30 }} src="profile.jpg" />
           <Typography variant="span">Chamathka</Typography>
         </UserBox>
       </StyledToobar>
+
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        open={open}
+        onClose={(e) => setOpen(false)}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+      >
+        <MenuItem>Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem>Logout</MenuItem>
+      </Menu>
     </AppBar>
   );
 };
