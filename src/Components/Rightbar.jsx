@@ -5,8 +5,14 @@ import {
   ImageList,
   ImageListItem,
   Typography,
+  List,
 } from "@mui/material";
 import React from "react";
+
+import ListItem from "@mui/material/ListItem";
+import Divider from "@mui/material/Divider";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
 
 const Rightbar = () => {
   return (
@@ -18,8 +24,8 @@ const Rightbar = () => {
         <AvatarGroup
           max={7}
           sx={{
-            marginTop: 1,
-            marginBottom: 1,
+            marginTop: 2,
+            marginBottom: 2,
             "& .MuiAvatarGroup-avatar": {
               marginLeft: "-4px", // Applies the spacing override
             },
@@ -44,7 +50,7 @@ const Rightbar = () => {
           cols={3}
           rowHeight={100}
           gap={5}
-          sx={{ marginTop: 1, marginBottom: 1 }}
+          sx={{ marginTop: 2, marginBottom: 2 }}
         >
           <ImageListItem sx={{ borderRadius: 3 }}>
             <img
@@ -84,6 +90,73 @@ const Rightbar = () => {
         <Typography variant="p" mt={2} sx={{ fontWeight: 300, color: "gray" }}>
           Latest Conversations
         </Typography>
+
+        <List
+          sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+        >
+          <ListItem alignItems="flex-start">
+            <ListItemAvatar>
+              <Avatar alt="Remy Sharp" src="/boy1.jpeg" />
+            </ListItemAvatar>
+            <ListItemText
+              primary="Chamilka Hewawasam"
+              secondary={
+                <React.Fragment>
+                  <Typography
+                    component="span"
+                    variant="body2"
+                    sx={{ color: "text.primary", display: "inline" }}
+                  >
+                    to shanulka bandarage
+                  </Typography>
+                  {" — I'll be there at 3.00 a.m "}
+                </React.Fragment>
+              }
+            />
+          </ListItem>
+          <Divider variant="inset" component="li" />
+          <ListItem alignItems="flex-start">
+            <ListItemAvatar>
+              <Avatar alt="Travis Howard" src="/girl5.jpeg" />
+            </ListItemAvatar>
+            <ListItemText
+              primary="Dilmi Dilthara"
+              secondary={
+                <React.Fragment>
+                  <Typography
+                    component="span"
+                    variant="body2"
+                    sx={{ color: "text.primary", display: "inline" }}
+                  >
+                    to Dulmi Chamathka
+                  </Typography>
+                  {" — Wish I could come, but I'm out of town this…"}
+                </React.Fragment>
+              }
+            />
+          </ListItem>
+          <Divider variant="inset" component="li" />
+          <ListItem alignItems="flex-start">
+            <ListItemAvatar>
+              <Avatar alt="Cindy Baker" src="/girl3.jpeg" />
+            </ListItemAvatar>
+            <ListItemText
+              primary="Lakshima Madurangi"
+              secondary={
+                <React.Fragment>
+                  <Typography
+                    component="span"
+                    variant="body2"
+                    sx={{ color: "text.primary", display: "inline" }}
+                  >
+                    Dulmi Chamathka
+                  </Typography>
+                  {" — Hey what's up ,what do you hope to do today morning…"}
+                </React.Fragment>
+              }
+            />
+          </ListItem>
+        </List>
       </Box>
     </Box>
   );
