@@ -65,7 +65,9 @@ const Navbar = () => {
           <VideoCameraBackIcon sx={{ fontSize: 28 }} />
         </Typography>
 
-        <VideoCameraBackIcon sx={{ display: { xs: "block", sm: "none" } }} />
+        <VideoCameraBackIcon
+          sx={{ display: { xs: "block", sm: "none" }, fontSize: 28 }}
+        />
         <Search>
           <InputBase placeholder="search..." />
         </Search>
